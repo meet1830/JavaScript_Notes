@@ -1,0 +1,58 @@
+Order of building the project
+
+--> created index.html and defined empty classes - .navigation, .content, .footer.
+--> created project files utils.css, style.css, blog.html, contact.html, search.html.
+--> included files in index.html
+--> in style.css defined .navigation, .content and .footer.
+--> gave height and bg color in all three classes 
+--> now opened index.html with live server
+--> the colors has white space at the border of the window from all sides. to remove that define * class
+--> defined max width 1 and 2 classes and gave max-width in utlis because want different width of content in nav bar and content. Also added the classes to content and footer in index.html
+--> defined class m-auto to bring in center. added in content and footer
+--> defined .nav-left and .nav-right in navigation in index.html to define margins in left and right in navbar. added logo here and search for articles and button
+--> added css custom properties or css variables root in utlis.css. 
+--> added display flex(to bring both in same line) and justify to separate logo and search and align items to bring both in center from height
+--> imported font families from google fonts. go to font click add style right side dialog box opens click on import and copy code. to define it and use copy style name from css from dialog box and define it. here font1 and font2.
+--> define utils first in index.html so that all utils class loads first. to ise it included it in .navigation in style.css and wrapped it in var. it will reflect in iblog.
+--> declared nav-left and right in style.css and defined font size in left
+--> defined ul in navbar and added li, a, href.
+--> defined navleft ul li and liststyle none to remove list pointers
+--> added iBlog inside span tag in navbar
+--> displayed navleft as flex but ul stills remains unflexed hence created navleft ul and displayed flex
+--> created navleft ul li a and defined decoration as none to remove underline in all li.
+--> added margin to li and font family, added margin, align-items and font size in ul.
+--> removed red color from navigation and also from content and footer 
+--> gave form-input class to navright-input and defined in utils
+--> in form-input in utild defined properties padding font size margin font family. similarly defined same for search btn in .btn. gave padding top in forminput because font has default padding and to bring it to center. same for btn
+--> downloaded image for homepage and extracted it created a img folder. 
+--> made two divs in content content-right and left. added h1 and p in it
+--> defined both divs in style. added font to left
+--> defined display flex to .content
+--> added img in content right index html. image will not be displayed because height width of it not given. give height in style contentright img
+--> give width display align items justify content in content right and left 
+    justify-content: (set horizontal alignment/spacing if flex-direction is row or vertical alignment/spacing if flex-direction is column)
+    align-items: (set vertical alignment if flex-direction is row or horizontal alignment if flex-direction is column)
+--> give flex direction and removed align items to make h and p below each other and to not centre alligned
+--> gave margin-top to content. margin not given because margin will not work as margin auto is given
+--> defined btn hover when user hovers over the element what design changes should happen. added transition in btn to make hover change in certain time 
+--> defined .nav-left ul li a:hover
+--> removed width 50% from content left and right so that content can adjust itself.
+--> defined div and added hr line in index
+--> added text to footer index.html and then in style defined properties
+--> h2 added in homearticle
+--> added classes to .homearticles
+--> added img to homearticle. defined class homearticlecontent and added h3, spans and p 
+--> added width to image using homearticle img and added align self center to home-article-content in style.css
+--> added align-self property to override grid or flex property and define it on homearticlecontent
+--> home article padding 50px
+--> now adding more articles hence duplicating home article div in index and removing the height of div home articles from style to not override the footer
+--> changed padding in home article to margin in style so that gap is set up between the article elements
+--> defined and modified navleft span style.css
+--> defined my-2 class in utils.css
+--> added postion relative to content to add background image
+--> defined and added props to content::after and added bg image
+--> added padding to content left to give padding to the text content
+--> modified home articles props and added alpha to rgb(its transperancy)
+--> in index added first h3 of featured articles in href 
+--> defined homearticlecontent a in style and added props to it
+--> copied home article div and duplicated it to have above props to each featured article

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Course</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <!-- <body onload="wallClock(); setInterval('wallClock()', 1000)"> -->
+    <!--#1 upto </div>-->
+    <!--difference between identity and class
+    class can be used for multiple elements and can be same for number of elements. if want to provide a particular property to multiple elements in html from css to that class then use class. element can be accessed by identity which is unique.-->
+    <div class="container">
+      <!--#2 just below command then to .js doc-->
+      <h1 id="heading" class="yourhead this is">Welcome to meet's website</h1>
+      <!--your head this is 3 classNames added for tutorial 17-->
+
+      <div id="myfirst" class="child red good" id="first">
+        child 1
+
+        <!--for tutorial video #15-->
+        <ul class="this" id="myul">
+          <!--ul id, fui and lui created for tutorial 16-->
+          <li class="child1" id="fui">this</li>
+          <li class="child1">is</li>
+          <li class="child1">list</li>
+          <li class="child1">of</li>
+          <li class="child1" id="lui">fruits</li>
+        </ul>
+      </div>
+      <!--type div.classname*n and get emmet for it in different lines-->
+      <!--child 1 outputs on website screen-->
+      <!--multiple classes by space 1.class 2.red-->
+      <div class="child">child 2</div>
+      <div class="child red">child 3</div>
+      <div class="child">child 4</div>
+
+      <!--#3 forms - after writing document.forms in .js file-->
+      <form action="none.html" method="post">
+        <!--after printing elements in .js file creating links #4-->
+        <a href="https:www.google.com">Go to google</a>
+
+        <!--add images to page and then .js file #5-->
+        <img
+          src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png"
+          alt="google"
+        />
+
+        Search this website: <input type="text" name="hello" id="" />
+        <!-- <input type="button" id="btn" value="submit"> -->
+        <button id="btn">Submit Form</button>
+        <!-- For tutorial 18 -->
+      </form>
+    </div>
+    <br />
+    <div class="no">this is a dummy div1</div>
+    <div class="no">this is a dummy div2</div>
+    <div class="no">this is a dummy div3</div>
+
+    <!-- for tutorial 37 -->
+    <h1>Student List</h1>
+    <ul id="students"></ul>
+
+    <!-- for tutorial 42 -->
+    <div class="container">
+      <button id="myBtn" class="btn btn-primary">Your Button</button>
+      <button class="btn btn-primary">Fetch Data</button>
+      <div id="content"></div>
+    </div>
+
+    <div class="container my-3">
+      <h3>Exercise 5: Press this button to pull results</h3>
+      <button class="btn btn-primary" id="meanings">Get results</button>
+      <div class="my-2">
+        <ul id="defs"></ul>
+      </div>
+    </div>
+
+    <!-- for tutorial 52 exercise 6 -->
+    <div>
+      <h1>Set your Alarm exercise 6</h1>
+      <form>
+        <div class="form-group">
+          <label for="alarm"
+            >Enter alarm details in the format as given below:
+          </label>
+          <br />
+          <label for="alarm">yyyy-mm-dd hh:mm:ss</label>
+          <input
+            type="text"
+            class="form-control"
+            id="alarmStr"
+            name="alarm"
+            placeholder="Enter the time in yyyy-mm-dd hh:mm:ss"
+          />
+          <small
+            id="invalidMessageName"
+            class="is-invalid form-text text-muted invalid-feedback"
+          >
+            Please enter alarm details as per the above given format only.
+          </small>
+        </div>
+        <button id="alarmSubmit" type="submit" class="btn btn-primary">
+          Set Alarm
+        </button>
+      </form>
+    </div>
+
+    <!-- for tutorial 61 exercise 7 -->
+    <div class="my-3 text-center">
+      <h2>Exercise 7: Wall clock</h2>
+      <div id="clock"></div>
+    </div>
+
+  </body>
+
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"
+  ></script>
+  <!-- <script src = "2_index.js"></script>  -->
+  <!-- <script src = "3_variables.js"></script>  -->
+  <!-- <script src = "4_datatypes.js"></script>  -->
+  <!-- <script src = "5_type conversion and coercion.js"></script>  -->
+  <script src = "6_js strings.js"></script> 
+  <!-- <script src = "7_arrays and objects.js"></script>  -->
+  <!-- <script src = "8_if-else and switches.js"></script>  -->
+  <!-- <script src = "9_loops.js"></script>  -->
+  <!-- <script src = "10_functions and scope.js"></script>  -->
+  <!-- <script src = "11_window object.js"></script>  -->
+  <!-- <script src = '12_understanding dom.js'></script> -->
+  <!-- <script src = '13_webpage crawler exercise 1.js'></script> -->
+  <!-- <script src = '14_dom selector.js'></script> -->
+  <!-- <script src = '15_dom traversing.js'></script> -->
+  <!-- <script src = '16_creating elements.js'></script> -->
+  <!-- <script src = '17_events.js'></script> -->
+  <!-- <script src = '18_more on events.js'></script> -->
+  <!-- <script src = '20_local and session storage.js'></script> -->
+  <!-- <script src = '21_exercise 2.js'></script> -->
+  <!-- <script src = '23_math object.js'></script> -->
+  <!-- <script src = '24_date object.js'></script> -->
+  <!-- <script src = '27_oops in js constructors.js'></script> -->
+  <!-- <script src = '28_object prototype.js'></script> -->
+  <!-- <script src = '30_prototype inheritance.js'></script> -->
+  <!-- <script src = '31_classes and inheritance.js'></script> -->
+  <!-- <script src = '32_exercise 4 library.js'></script> -->
+  <!-- <script src = '32.1_exercise 4.js'></script> -->
+  <!-- <script src = '34_asynchronous programming.js'></script> -->
+  <!-- <script src = '37_callback functions.js'></script> -->
+  <!-- <script src = '38_exercise 5.js'></script> -->
+  <!-- <script src = '39_promises.js'></script> -->
+  <!-- <script src = '39b_promises.js'></script> -->
+  <!-- <script src = '41_arrow functions.js'></script> -->
+  <!-- <script src = "42_fetch api.js"></script> -->
+  <!-- <script src = "43_async await.js"></script> -->
+  <!-- <script src = "44_error handling and try catch.js"></script> -->
+  <!-- <script src = "46_regular expressions.js"></script> -->
+  <!-- <script src = "47_regular expressions 2.js"></script> -->
+  <!-- <script src = "48_regular expressions 3 - character sets.js"></script> -->
+  <!-- <script src = "49_regular expressions 4.js"></script> -->
+  <!-- <script src = "51_iterators.js"></script> -->
+  <!-- <script src = "52_exercise 6 alarm clock.js"></script> -->
+  <!-- <script src = "53_generators.js"></script> -->
+  <!-- <script src = "56_for-of for-in loops.js"></script> -->
+  <!-- <script src = "57_maps.js"></script> -->
+  <!-- <script src = "58_sets.js"></script> -->
+  <!-- <script src = "59_symbols.js"></script> -->
+  <!-- <script src = "60_destructuring.js"></script> -->
+  <!-- <script src = "61_exercise 7 wall clock.js"></script> -->
+
+</html>

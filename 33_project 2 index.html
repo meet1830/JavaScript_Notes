@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Library website</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Meet's Library</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">
+              Home<span class="sr-only">(current)</span></a
+            >
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            id="searchTxt"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <!--id added to search tab-->
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <div id="message">
+      <!-- alert message show function -->
+    </div>
+
+    <div class="container my-3">
+      <h1>Meet's Library</h1>
+      <hr />
+      <form id="libraryForm">
+        <!-- added id to grab it while adding methods to display prototype -->
+        <div class="form-group row">
+          <label for="bookName" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="bookName"
+              placeholder="Book Name"
+            />
+          </div>
+          <!-- change name, id, placeholder, for and input type to text-->
+        </div>
+        <div class="form-group row">
+          <label for="Author" class="col-sm-2 col-form-label">Author</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="author"
+              placeholder="Author"
+            />
+          </div>
+          <!-- change name, id, placeholder, for and input type to text-->
+        </div>
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Type</legend>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="type"
+                  id="fiction"
+                  value="fiction"
+                  checked
+                />
+                <label class="form-check-label" for="fiction"> Fiction </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="type"
+                  id="programming"
+                  value="programming"
+                />
+                <label class="form-check-label" for="programming">
+                  Computer Programming
+                </label>
+              </div>
+              <div class="form-check disabled">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="type"
+                  id="cooking"
+                  value="cooking"
+                />
+                <label class="form-check-label" for="cooking"> Cooking </label>
+              </div>
+              <!-- change names, ids, values of all three, remove disabled from third one and name should be same - 'type' bc we want any one radio button to check at a time, not all three or any two. -->
+            </div>
+          </div>
+        </fieldset>
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Add Book</button>
+          </div>
+        </div>
+      </form>
+
+      <div id="table">
+        <h1>Your books</h1>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Author</th>
+              <th scope="col">Type</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+          <!-- added tableBody id for add function, or want the add function to grab this element through this id or want to add information through add function in tbody -->
+        </table>
+        <!-- created div#table and pasted from bootstrap website, added heading h1, changed to name, author and type-->
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="33_project 2 index.js"></script> -->
+    <!-- <script src="33_project 2 indexes6.js"></script> -->
+    <script src="33.1_index.js"></script>
+  </body>
+</html>

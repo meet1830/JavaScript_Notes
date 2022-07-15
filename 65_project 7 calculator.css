@@ -1,0 +1,48 @@
+html * {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.container {
+  text-align: center;
+  margin-top: 23px;
+}
+
+table {
+  margin: auto;
+}
+
+input {
+  /* style the element through the browser and then copy the code here to apply it permanently */
+  font-size: 34px;
+  height: 65px;
+  width: 456px;
+  border-radius: 21px;
+  border: 2px solid darkgreen;
+  margin-bottom: 9px;
+  margin-top: 12px;
+  text-align: right;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+button {
+  border-radius: 20px;
+  font-size: 30px;
+  background: lightgreen;
+  width: 87px;
+  height: 60px;
+  margin: 3px;
+  border: 1px solid green;
+}
+
+.calculator {
+  border: 2px solid green;
+  background-color: lightgrey;
+  padding: 23px;
+  border-radius: 35px;
+  display: inline-block;
+}
+
+h1 {
+  font-size: 28px;
+}

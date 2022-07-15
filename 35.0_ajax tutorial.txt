@@ -1,0 +1,1 @@
+Hello I am Meet Mehta and i made an XMLHttpRequest using AJAX in JavaScript.
