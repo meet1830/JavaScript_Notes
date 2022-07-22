@@ -10,15 +10,15 @@ Promise states
 function func1() {
   return new Promise(function (resolve, reject) {
     setTimeout(() => {
-      //here generally tasks like making a request to a network, initiating a xhr object, any work of bringing resources from a network. if successfull in bringing resources,
+      //here generally tasks like making a request to a network, initiating a xhr object, any work of bringing resources from a network. if unsuccessfull in bringing resources,
       const error = true;
       //generally error variable is used for: we make a request to network and check whether response or status code is 200 or not (successfull or not). if yes than make error as false.
       if (!error) {
         //if no error comes then resolve
-        console.log("Your promise has been resolved.");
+        console.log("Function: Your promise has been resolved.");
         resolve();
       } else {
-        console.log("Your promise is not resolved.");
+        console.log("Function: Your promise is not resolved.");
         reject('Sorry not fulfilled.');
       }
     }, 2000);
@@ -26,11 +26,15 @@ function func1() {
 }
 
 func1().then(function() {
-    console.log('Thanks for resolving.')
+    console.log('Call: Thanks for resolving.')
     //then means if function is resolved then what to do. after then the resolve function which we want that it is called, we will right that in then(). resolve() means that same function in then and reject() means same function in catch.
 }).catch(function(error) {
-    console.log("Very bad you could not resolve this. Reason: " + error);
+    console.log("Call: Very bad you could not resolve this. Reason: " + error);
     //if it is not able to resolve then what to do.
 })
+/*
+Function: Your promise is not resolved.
+Call: Very bad you could not resolve this. Reason: Sorry not fulfilled.
+*/
 
-//we use promise as substitue to callback function. See 39b_promises.js.
+//we use promise as substitute to callback function. See 39b_promises.js.

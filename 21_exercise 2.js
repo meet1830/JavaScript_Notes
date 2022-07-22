@@ -1,4 +1,4 @@
-//exercise 2
+ //exercise 2
 
 /*
 You have to create a div and inject it into the page which contains a heading. 

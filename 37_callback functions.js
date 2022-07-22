@@ -8,43 +8,74 @@ const students = [
   { name: "meet2", subject: "machine learning" },
 ];
 
-// function enrollStudents(student) {
-//     setTimeout(function () {
-//         students.push(student);
-//         console.log('Student has been enrolled.')
-//     }, 3000);
-//     //settimeout function manages function in the background, after a given time interval.
-// }
-function enrollStudents(student, callback) {
-  setTimeout(function () {
-    students.push(student);
-    console.log("Student has been enrolled.");
-    callback(); //can give any name
-  }, 3000);
-  //settimeout function manages function in the background, after a given time interval.
-}
 
 function getStudents() {
   setTimeout(function () {
     let str = "";
     students.forEach(function (student) {
-      //here can pass argument post, element, student all same
+      //here can pass argument as post, element, student all same
       str += `<li>${student.name}</li>`;
     });
     document.getElementById("students").innerHTML = str;
     console.log("Students have been fetched.");
-  }, 1000);
+  }, 3000);
+  //settimeout function manages function in the background, after a given time interval.
+}
+
+
+function enrollStudents(student) {
+    setTimeout(function () {
+        students.push(student);
+        console.log('Student has been enrolled.')
+    }, 3000);
+    //settimeout is a callback function. it manages function in the background, after a given time interval.
 }
 
 let newStudent = { name: "sunny", subject: "python" };
+
 // enrollStudents(newStudent);
 // getStudents();
+// if settimeout for enroll students(for commented entroll students call) is 3 sec and for getstudents is 1 sec
+// here we can only see first two students in output because enrollment of sunny lasts starts after 3 seconds timeout whereas getstudents starts and get completed after 1 sec hence sunny is not printed.
+// this means that if both functions are called together then they will execute together and the one with less timeout will finish first and then the function with greater timeout.
+// callback functions can be synchronous or async. foreach function is sync func.
 
+
+function enrollStudents(student, callback) {
+  setTimeout(function () {
+    students.push(student);
+    console.log("Student has been enrolled.");
+    callback(); //can give any name
+  }, 1000);  
+}  
+/*
+callback functions in javascript
+Student has been enrolled.
+Students have been fetched.
+*/
+
+
+newStudent = { name: "sunny", subject: "python" };
 enrollStudents(newStudent, getStudents);
 //getstudents is our callback func here.
+// here callback function = getstudents and parent function = enroll students. here parent will first start to execute after its timeout. then at the line of callback function call, will start to execute it. but since callback itself has timeout, will keep executing parent function and callback function both together.
 
-//here we can only see first two students in output because enrollment of sunny lasts completes after 3 seconds timeout whereas getstudents get completed in 1 sec hence sunny is not printed.
-//hence callback functions can be synchronous or async. foreach function is sync func.
-//if this is the case for timeout then we will give callback func to enrollstudent. callback means after executing the task of enrollment the function is instructed to call the callback func, whereever specified.
-//so here getstudents - callback function only runs after the execution of enroll students is done after 3 seconds. hence it blocks the execution.
-//if the case is reversed, enroll takes 1 sec and getstu takes 5 sec then also in one second after completing enrol callback calls getstu function.
+
+function enrollStudents(student, callback) {
+  setTimeout(function () {
+    students.push(student);
+    console.log("Student has been enrolled.");
+    callback(); //can give any name
+    setTimeout(() => {
+      console.log("2 sec time");
+    }, 2000);
+  }, 1000); 
+} 
+/*
+callback functions in javascript
+Student has been enrolled.
+2 sec time
+Students have been fetched.
+*/
+
+// here the callback func has time 3 sec where as the 2 sec time has 2 sec. hence the 2 sec time if is printed first and then the students are fetched.  

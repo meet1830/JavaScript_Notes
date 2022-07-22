@@ -1,15 +1,15 @@
-//object literal : object.prototype
+// object literal : object.prototype
 let obj = {
     name: 'meet',
     channel: 'codewithharry',
     address: 'mars'
 }
 console.log(obj);
-//in console, the output element obj also contains prototype or __proto__ as a part of element
+// in console, the output element obj also contains prototype or __proto__ as a part of element
 //the prototype is where the element is started to create after we define it. for example, we have google chrome, vs code etc that helps us to make websites. similarly, creation of objects initially uses the element parts defined in the prototype 
 //whenever we make an object using object literal, we already have object.prototype built in.
 
-//if object is made using constructor
+// if object is made using constructor
 function Obj (givenName) {
     this.name = givenName;
 }

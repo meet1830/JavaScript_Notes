@@ -40,14 +40,18 @@ class Library {
 
 }
 
-//in console to run the code
+//in console run the code
 /*
 meetLib = new Library(['Clever Programmer', 'Akshay Saini', 'JavaScript for Beginners']); 
-//give input in form of array of strings
+// give input in form of array of strings
+
 meetLib.getBooklist(); 
-//prints all books to console
+// prints all books to console
+
 meetLib.issueBook('Clever Programmer', 'Meet');
+
 meetLib.issueBook('Clever Programmer', 'Meet2'); 
-//gives error
+// gives error
+
 meetLib.returnBook('Clever Programmer');
 */
