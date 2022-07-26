@@ -45,6 +45,7 @@ const data = [
   },
 ];
 
+// iterating through the data using iterator
 function cvIterator(profiles) {
   let nextIndex = 0;
   return {
@@ -65,10 +66,13 @@ showNextCv();
 
 function showNextCv() {
   let currentCandidate = candidates.next().value;
+
   const candidateImage = document.getElementById("candidateImage");
   const candidateInfo = document.getElementById("candidateInfo");
+
   if (currentCandidate != undefined) {
     candidateImage.innerHTML = `<img src='${currentCandidate.image}'>`;
+
     candidateInfo.innerHTML = `<ul class="list-group">
             <li class="list-group-item">${currentCandidate.name}</li>
             <li class="list-group-item">${currentCandidate.age}</li>
@@ -79,12 +83,15 @@ function showNextCv() {
   } else {
     candidateImage.innerHTML = "";
     candidateInfo.innerHTML = "";
+
     let message = document.createElement("div");
     message.className = "container";
     message.id = "finishedMessage";
     message.innerHTML = `All candidates are viewed. Refresh the page to view them again in same order.`;
+
     const nextButton = document.getElementById("nextButton");
     nextButton.classList.add("disabled");
+
     let container = document.querySelector(".container");
     container.insertBefore(message, candidateImage);
 

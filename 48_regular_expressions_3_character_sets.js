@@ -25,9 +25,9 @@ regex = /m[a-z A-z]e[0-9]/;
 let str = 'meet bhai';
 
 
-//Quantifiers - Use {}
-//when want to specify quantitiy in any character
-//string remains same and regex changes
+// Quantifiers - Use {}
+// when want to specify quantitiy in any character
+// string remains same and regex changes
 regex = /me{2}t/;
 //e can occur exactly 2 times. matches for meet but does not match for meeet.
 

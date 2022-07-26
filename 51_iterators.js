@@ -3,6 +3,11 @@
 //it uses the iterator protocol - implementing next method, has to have a done value and should have a value.
 //new concept in js.
 
+
+const myArray = ["apples", "oranges", "grapes", "chiku"];
+console.log(myArray);
+
+
 function fruitsIterator(values) {
   let nextIndex = 0;
   //function will return an object
@@ -30,22 +35,32 @@ function fruitsIterator(values) {
   };
 }
 
-const myArray = ["apples", "oranges", "grapes", "chiku"];
-console.log(myArray);
 
 //using the iterator
 const fruits = fruitsIterator(myArray);
+
 console.log(fruits);
+// {next: ƒ}
 console.log(fruits.next());
+// {value: 'apples', done: false}
 //will print the first value of array as object
 //if .value written then prints the name of fruit in string form
+
 console.log(fruits.next().value);
+// oranges
 //print second value and iterates with each console log
+
 console.log(fruits.next().value);
+// grapes
+
 console.log(fruits.next());
+// {value: 'chiku', done: false}
+
 //with the above clog, all array elements are printed
+
 console.log(fruits.next());
 //prints done: true;
+
 console.log(fruits.next().value);
 //prints undefined
 

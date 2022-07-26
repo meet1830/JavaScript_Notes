@@ -1,9 +1,11 @@
 //pretend this is coming fom server as a response.
 //if for example if response coming from server is not undefined then we want to throw an error. sometimes to validate if server is sending incorrect response, then we need to throw error.
 let a = 'Meet';
-a = undefined; //does not throw error.
+a = undefined; 
+//does not throw error.
 if (a!= undefined) {
     throw new Error('This is not undefined');
+    // this will throw a custom error in console
 } else {
     console.log('This is defined.');
 }
@@ -17,12 +19,15 @@ try {
 } catch (error) {
     console.log('Are you okay?');
     console.log(error);
+    // ReferenceError: fjklffd is not defined
     // we can also print the error that the catch block catched, in form of string in console. here it is giving reference error. if we write something like
     // null.console
-    //then it will output typeError that null is not defined.
+    // then it will output typeError that null is not defined.
     console.log(error.name);
+    // ReferenceError
     // type of or name of error
     console.log(error.message);
+    // fjklffd is not defined
     // also for validation purposes we want to throw error, that this data from the server does not have data in form of a template or something is missing, then error should be thrown so we know where the problem lies in that api.
 } finally {
     console.log('Finally we will run this');

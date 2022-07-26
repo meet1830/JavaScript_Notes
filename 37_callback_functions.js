@@ -35,6 +35,7 @@ let newStudent = { name: "sunny", subject: "python" };
 
 // enrollStudents(newStudent);
 // getStudents();
+
 // if settimeout for enroll students(for commented entroll students call) is 3 sec and for getstudents is 1 sec
 // here we can only see first two students in output because enrollment of sunny lasts starts after 3 seconds timeout whereas getstudents starts and get completed after 1 sec hence sunny is not printed.
 // this means that if both functions are called together then they will execute together and the one with less timeout will finish first and then the function with greater timeout.

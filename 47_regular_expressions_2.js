@@ -26,10 +26,13 @@ regex = /me\*et/;
 let str = 'meet is a good boy and meet s full name is meet mehta - me*et.';
 
 let result = regex.exec(str);
+
 console.log('Result of regex is: ', result);
+// Result of regex is:  ['me*et', index: 56, input: 'meet is a good boy and meet s full name is meet mehta - me*et.', groups: undefined]
 
 if(regex.test(str)) {
     console.log(`String matches the regular expression "${regex.source}"`);
+    // String matches the regular expression "me\*et"
 } else {
     console.log(`String does not match the regular expression "${regex.source}"`);
 }

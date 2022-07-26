@@ -11,11 +11,16 @@ function* numbersGen() {
 //we are telling it to generate, yield a new value whenever we initialize the gen variable and call it
 const gen = numbersGen();
 console.log(gen.next());
+// {value: 1, done: false}
 //here in output it says done false after value means we still have some values pending
 console.log(gen.next());
+// {value: 2, done: false}
 console.log(gen.next());
+// {value: 3, done: false}
 console.log(gen.next());
+// {value: 4, done: false}
 console.log(gen.next());
+// {value: undefined, done: true}
 
 let i = 0;
 function* numbersloopGen() {
