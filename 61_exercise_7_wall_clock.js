@@ -42,7 +42,9 @@ setInterval(() => {
 
   //setting am/pm
   currentHours < 12 ? (currentMeridian = "AM") : (currentMeridian = "PM");
+
   currentHours = currentHours > 12 ? currentHours - 12 : currentHours;
+  
   currentHours = currentHours == 0 ? 12 : currentHours;
 
   //setting 0 padding before single digit if true

@@ -1,7 +1,8 @@
+// using prism.js library
 console.log('Project 6 - PostMan Clone');
 
 //  Utility functions:
-//  1. Utility function to get DOM elemwnt from string
+//  1. Utility function to get DOM element from string
 function getElementFromString(string) {
   let div = document.createElement('div');
   div.innerHTML = string;
@@ -32,6 +33,7 @@ let addedParamCount = 0;
 let addParam = document.getElementById('addParam');
 addParam.addEventListener('click', (e) => {
   let params = document.getElementById('params');
+  e.preventDefault();
   let string = `<form class="row g-3 my-2">
                   <legend class="col-form-label col-sm-2 pt-0">Parameter ${addedParamCount+2}</legend>
                   <div class="col-md-4">
@@ -56,10 +58,12 @@ addParam.addEventListener('click', (e) => {
   //to add this in the dom we will have to make an element of this. Utility function --> 1
   //convert the element string to DOM
   let paramElement = getElementFromString(string);
+  // then insert it to dom
   params.appendChild(paramElement);
+  
 
   //OR without using utility function just use
-  //params.innerHTML += string;
+  // params.innerHTML += string;
 
   //add event listener to '-' button to delete parameter
   //added 'deleteParam' class to button in string
@@ -72,7 +76,6 @@ addParam.addEventListener('click', (e) => {
       //in loop because to know which '-' was clicked.
     })
   }
-  e.preventDefault();
 })
 
 //if user clicks submit button
@@ -89,6 +92,8 @@ let submit = document.getElementById('submit').addEventListener('click', () => {
   let data = {};
   if (contentType == 'paramsRadio') {
     for (let i=0; i<addedParamCount+1; i++) {
+        // +1 because already have 1 default parameter box
+        // if not undefined check below because if added some value in a param box and deleted that param then also will give an error that param is not defined.
         if (document.getElementById(`parameterKey${i+1}`) != undefined) {
         let key = document.getElementById(`parameterKey${i+1}`).value;
         let val = document.getElementById(`parameterValue${i+1}`).value;
@@ -123,6 +128,7 @@ let submit = document.getElementById('submit').addEventListener('click', () => {
     })
   }
   //for get request use: https://randomuser.me/api
+  // or for get request can use jsonplaceholder link below from post request but dont add anything on json data
   //for post request use: https://jsonplaceholder.typicode.com/posts and in json textarea add {"title":"foo","body":"bar","userId":1} or in custom parameters add same thing without "" and 3 boxes here.
   else {
     fetch(url, {

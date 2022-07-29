@@ -3,7 +3,7 @@ body {
 }
 
 .imgBox {
-  background-image: url("64_drag\ and\ drop\ image.jpg");
+  background-image: url("64_drag_and_drop_image.jpg");
   /* image still not visible. have to set div's height and width */
   position: relative;
   height: 216px;
