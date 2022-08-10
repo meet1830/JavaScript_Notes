@@ -40,6 +40,11 @@ z = Math.pow(2, 3);
 console.log(z);
 // 8
 
+// Exponential operator ES6 syntax
+z = 2 ** 3;
+console.log(z);
+// 8
+
 z = Math.min(4, 3, 24, -24, 2); 
 // returns min of the given numbers
 console.log(z);

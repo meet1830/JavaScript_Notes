@@ -6,7 +6,7 @@ PRIMITIVE DATATYPES
 2. numbers
 3. boolean - true, false
 4. null - intentional empty value - used when want to check afterwards if the variables is null value or not
-5. undefined
+5. undefined -> defined but not assigned any value (different from null where it is intentionally kept null)
 6. symbol
 
 REFERENCE DATATYPES OR NONPRIMITIVE DATATYPES
@@ -62,3 +62,49 @@ function findName() {}
 
 let date = new Date();
 console.log(typeof date); //typeof is object
+
+
+const c = NaN;
+console.log(c, typeof(c));
+// NaN 'number'
+// type of NaN is a number
+
+
+// TRUTHY AND FALSY
+// Like every datatype is an object in js, every datatype value is classified into either a truthy or a FALSY value
+
+let x = 5;
+if (x) {
+  console.log("truthy");
+} else {
+  console.log('falsy');
+}
+// truthy
+
+// for x = 0 -> falsy
+// for x = 'meet' -> truthy
+// for x = '' -> falsy
+
+
+// every non zero value (even negative) is a truthy value and just the 0 is a falsy value
+// for strings, if the string value which is declared is empty then it is a falsy value otherwise it is truthy
+// boolean -> true value is truthy and false is falsy
+// undefined is falsy
+// null is falsy
+// empty array [] and empty object {} are both truthy
+// NaN is falsy
+
+// truthy -> non zero number, non zero string, [], {}
+// falsy -> 0, '', undefined, null, NaN
+
+
+document.getElementById('heading').innerText = stMarks;
+// browser will not recognise the object and will display below on the document
+// [object Object]
+
+document.getElementById('heading').innerHTML = stMarks;
+// [object Object]
+
+// for this need to convert object to string
+document.getElementById('heading').innerText = JSON.stringify(stMarks);
+// {"meet":49,"dhruvi":53,"rita":98,"rakesh mehta":74}

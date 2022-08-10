@@ -42,6 +42,12 @@ arr.forEach(function(element, index, array) {
 33 754 4 (5) [1, 24, 36, 3, 754]
 */
 
+// forEach loop
+/*
+1. Iterate and run the callback for each element (callback -> the function we are passing in as an argument)
+2. Cannot manipulate any elements inside callback function (for example do element = element + 2 inside the callback and print array outside the loop then the array will still remain same)
+3. Does not return any value
+*/
 
 let Obj = {
     name: 'Rohandas',

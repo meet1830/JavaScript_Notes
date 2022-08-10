@@ -13,7 +13,7 @@ let key2 = {};
 let key3 = function () {};
 
 // or can also define keys as
-key1 = 'myStr', key2 = {}, key3 = function() {};
+// let key1 = 'myStr', key2 = {}, key3 = function() {};
 
 // can complete by writing values in above statement also
 

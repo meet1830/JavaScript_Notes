@@ -16,6 +16,11 @@ console.log(a,b,c,d);
 console.log(a, b, c);
 // 34 465 35
 
+({p, q, r} = {a:34, b:465, c:35, d:75, e:63});
+console.log(p, q, r);
+// undefined undefined undefined
+// variable names should be same as property names
+
 ({a, b, c, ...d} = {a:34, b:465, c:35, d:75, e:63});
 console.log(a, b, c, d);
 // 34 465 35 {d: 75, e: 63}
@@ -51,3 +56,53 @@ console.log(model2, age2, gender2, net2, start2);
 
 start();
 // started
+
+
+let obj1 = {
+    a: 5,
+    b: 6
+}
+// conventional method if not want to use obj1.a everytime referring that value
+a = obj1.a;
+b = obj1.b;
+// then can use a and b as variables 
+
+// by destructing new syntax
+({
+    a,
+    b
+} = obj1)
+console.log(a, b)
+// 5 6
+// reassigning then need to put inside curly brackets
+
+let obj2 = {
+    ab: 5,
+    bc: 10
+}
+let {
+    ab,
+    bc
+} = obj2
+console.log(ab, bc)
+// 5 10
+
+// variable names should be same as property names in destructuring syntax and hence as a result can reorder values inside it
+let obj3 = {ab: -1, bc: 0, cd: 2, de: 3, ef: 23, fg: 43}
+let {de, fg, cd} = obj3
+// let {ab, de, fg, cd}
+// here if ab as property name then will give error as defined for obj2 in destructuring syntax
+console.log(de, fg, cd)
+// 3 43 2
+
+let obj4 = {hi: -1, ij: 0}
+let {hi = 2, ij} = obj4
+console.log(hi, ij);
+// -1 0
+// cannot change values let destructuring, does not give any error
+
+// for arrays
+let arr = [5, 10, 15]
+let [x, y, z] = arr;
+console.log(x, y, z);
+// 5 10 15

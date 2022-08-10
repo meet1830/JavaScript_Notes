@@ -1,3 +1,9 @@
+// Types of functions
+// 1. Normal functions
+// 2. anonymous functions
+// 3. self invoking functions
+
+// 1. 
 function greet (name, thanks = 'thanks a lot') {
     console.log(`I have found a great friend in you, ${name}. Again thanking you, ${thanks}.`)
     return 1;
@@ -6,7 +12,7 @@ function greet (name, thanks = 'thanks a lot') {
 greet('meet', 'sdf');
 greet('meet');
 
-
+// 2. functions without a name are called anonymous functions. but they need to be assigned to a value
 const mygreet = function (name, thanks = 'thanks a lot') {
     // 'thanks a lot' default value for argument thanks
     let msg = (`I have found a great friend in you, ${name}. Again thanking you, ${thanks}.`)
@@ -21,7 +27,11 @@ val = mygreet('dhruvi');
 
 console.log(val);
 
-
+// 3. self invoking functions - functions which get invoked at the time of declaration itself, putting the declaration in brackets and calling it using brackets at the end
+(function abc () {
+    console.log("abc");
+})();
+// used when we just want the function to do its job without getting registered in the jacascript engine rendering in the browsers
 
 // can also define function in an object
 
@@ -46,6 +56,7 @@ arr.forEach(function(element, index) {
 vegetable 1
 furniture 2
 */
+
 
 console.log('-----------');
 console.log('-----------');

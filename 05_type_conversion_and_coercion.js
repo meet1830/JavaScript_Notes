@@ -51,4 +51,19 @@ let myStr = '753';
 let myNum = 42;
 console.log(myStr + myNum); 
 // 75342
-//converts myNum to string and concatenates 
+// converts myNum to string and concatenates 
+
+console.log(myStr / myNum);
+// 17.928571428571427
+// type number
+
+console.log('5' - 5);
+// 0
+// number
+// this happens because + is only overloaded and - is not
+
+console.log(5 - 'meet');
+// NaN
+
+console.log('5' - 'meet');
+// NaN

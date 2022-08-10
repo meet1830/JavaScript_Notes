@@ -1,8 +1,14 @@
 //dom = document object model
+
+console.log(this);
+// Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+
 let a = window;
 console.log(a);
+// Window {window: Window, self: Window, document: document, name: '', location: Location, …}
 
 // window.alert('meet'); //or
+// this.alert('meet') //or
 alert('meet2'); 
 // window is a global object in client side js and hence no need to write window.alert
 
@@ -11,6 +17,8 @@ prompt("computer destroyed, type your name");
 
 confirm('you sure you want to del this page?'); 
 // if press ok than prints true and false when clicked cancel
+
+// we are able to use all this alert, prompt, confirm, and also events like mouseover, onclick, etc because of window object. it contains all of the above mentioned as functions inside it
 
 // document is a part of window object
 let b = document; 
