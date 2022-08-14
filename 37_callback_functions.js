@@ -267,3 +267,113 @@ The order is ready and handed over to the zomato guy!
 
 // this is called callback hell and it should be avoided
 // instead use async await and promises
+
+
+function calcSum(num1, num2) {
+  return num1 + num2;
+}
+function display(data) {
+  console.log(data);
+}
+let result = calcSum(5, 5);
+display(result);
+// 10
+// but we need to call two functions to show the result
+
+function calcSum2(num1, num2) {
+  display(num1 + num2);
+}
+calcSum2(5, 6);
+// 11
+// here we cannot stop the function from displaying the result
+// hence use callbacks
+
+function mySum3(num1, num2, callback) {
+  callback(num1 + num2);
+}
+mySum3(5, 7, display);
+// 12
+// we can define another function and in argument pass that instead of display. hence through callback we get that flexibility.
+
+
+
+function second () {};
+// method 1 
+setTimeout(() => second(), 5000);
+
+// method 2
+setTimeout(second, 5000);
+
+// incorrect way 
+setTimeout(second(), 5000);
+// because it will be invoked immediately, bc settimeout expects a callback function and not the function itself
+
+
+
+function printTemp() {
+  let x = 5.535;
+  return x;
+}
+console.log(printTemp);
+/* ƒ printTemp() {
+  let x = 5.535;
+  return x;
+} */
+console.log(printTemp());
+// 5.535
+// first statement says that print the function
+// second statement days that print the output of the function
+
+
+
+function displayTime () {
+  const date = new Date();
+  document.getElementById('displayTime').innerHTML = `${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()}`
+
+
+
+  let hh = date.getHours();
+  let mm = date.getMinutes();
+  let ss = date.getSeconds();
+
+  document.getElementById('displayTime').innerHTML += `<br> 
+  <br> 
+  ${hh} : ${mm} : ${ss}`;
+  // 8 : 2 : 4 but we want 08 : 02 : 04
+
+  // we use padstart function which works only on strings and takes the length as argument and the default character. if the length of string is less than the given length then it places the default string and increases the length
+  // padstart function places default string on start whereas padend places it as back
+  hh = hh.toString().padStart(2, '0');
+  mm = mm.toString().padStart(2, '0');
+  ss = ss.toString().padStart(2, '0');
+  
+  document.getElementById('displayTime').innerHTML += `<br> 
+  <br> 
+  ${hh} : ${mm} : ${ss}`;
+}
+
+displayTime();
+
+// setInterval(() => displayTime(), 1000);
+// OR
+setInterval(displayTime, 1000);
+
+
+
+// display a clock updating every second without using setinterval
+// using recursion
+function clockWoSetInterval () {
+  const date1 = new Date();
+
+  const h1 = date1.getHours().toString().padStart(2, '0');
+  const m1 = date1.getMinutes().toString().padStart(2, '0');
+  const s1 = date1.getSeconds().toString().padStart(2, '0');
+  
+  document.getElementById('displayTime').innerHTML += `<br> 
+  <br> 
+  ${h1} : ${m1} : ${s1}`;
+
+  setTimeout(clockWoSetInterval, 1000);
+}
+
+clockWoSetInterval();
