@@ -132,6 +132,7 @@ promise3().then(
   }
 );
 // I was rejected with the message: Hey, I was rejected!
+// Can reject promise without using catch, by passing a second callback in .then
 
 // syntax
 let basicPromise = new Promise(function (resolve, reject) {
@@ -389,35 +390,6 @@ function executeOrder() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 let p = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve(10);
@@ -570,3 +542,102 @@ const hoursLeft = totalSeconds / 3600 - finalHours;
 const finalMinutes = Math.floor(hoursLeft * 60);
 
 document.querySelector(".total").innerHTML += `${finalHours} : ${finalMinutes}`;
+
+
+
+let p1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Promise 1 resolved");
+  }, 1000);
+})
+
+let p2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Promise 2 resolved");
+  }, 3000);
+})
+
+let p3 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Promise 3 resolved");
+  }, 5000);
+})
+
+// p1
+// .then((resolvedMessage) => console.log(resolvedMessage))
+// .catch((err) => console.log(err));
+
+// p2
+// .then((resolvedMessage) => console.log(resolvedMessage))
+// .catch((err) => console.log(err));
+
+// p3
+// .then((resolvedMessage) => console.log(resolvedMessage))
+// .catch((err) => console.log(err));
+/* Promise 1 resolved
+Promise 2 resolved
+Promise 3 resolved */
+
+// treating every promise individually. if we want to know that all the promises are resolved then need to use promise.all
+/*
+- Will only resolve if 'ALL' the promises gets resolved (can be related to && operator)
+if even one of them rejects then will go to catch part
+- Overall resolved value will be an array of resolved values of all promises as can be seen in output
+- rejected value will be the first rejected promise value
+- Overall promise resolve time = resolve time of promise which takes the longest time */
+Promise.all([p1, p2, p3])
+.then((resolvedMessage) => console.log(resolvedMessage))
+.catch((err) => console.log(err));
+/* (3) ['Promise 1 resolved', 'Promise 2 resolved', 'Promise 3 resolved']
+  0: "Promise 1 resolved"
+  1: "Promise 2 resolved"
+  2: "Promise 3 resolved"
+  length: 3
+  [[Prototype]]: Array(0) 
+*/
+// after 5 seconds will get this output
+
+// if one of the promise gets rejected
+let p4 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Promise 4 resolved");
+  }, 1000);
+})
+
+let p5 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject("Promise 5 rejected");
+  }, 3000);
+})
+
+let p6 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Promise 6 resolved");
+  }, 5000);
+})
+Promise.all([p4, p5, p6])
+.then((resolvedMessage) => console.log(resolvedMessage))
+.catch((err) => console.log(err));
+// Promise 5 rejected
+// output after 3 seconds
+
+// also if p5 and p6 both were rejected then also same output will break out whenever a promise is rejected and will output only that err through catch block cause will not execute promises after that 
+
+// also if all promises having different output messages and one of the promises (not the last one) has the largest timeout value, then the order of the printing resolved messages in the array does not change and will be the same order as given input in promise.all argument
+
+
+// now if we want that any one of the promise gets resolved then ok then use promise.any -> similar to OR || condition
+/**
+ * will resolve even if a single promise gets resolved (can be related to || operator)
+ * overall resolved value = resolved value of the first resolved promise
+ * rejected promises will be skipped, if all promises are rejected, promise.any will be rejected -> catch handler will work
+ * overall promise resolve time = resolve time of promise which takes the shortest time
+ */
+Promise.any([p4, p5, p6])
+.then((resolvedMessage) => console.log(resolvedMessage))
+.catch((err) => console.log(err));
+// promise 4 resolved
+// it will break out of any one of the promises gets resolved (the fastest one)
+
+// if all promises are rejected then error will print 
+// AggregateError: All promises were rejected
