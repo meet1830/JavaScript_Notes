@@ -217,3 +217,88 @@ Processed data successfully
 Data fetched and processed */
 // same output but after 4 seconds first promise is finished it will take 8 seconds to finish the second one because it started executing when called, which is after the first promise was resolved
 // here if first one is rejected, then catch block message will be printed, but if first one is resolved and second one if rejected then resolve message for first is printed and then catch block message is printed
+
+
+// chaining using async await
+const chefReceivedTheOrderAndStartedPreparing = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("Chef received the order and started preparing");
+      resolve();
+    }, 2000);
+  })
+}
+const pizzaSauceAdded = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("pizza sauce added");
+      resolve();
+    }, 10000);
+  })
+}
+const firstLayerOfCheeseAdded = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("first layer of cheese added");
+      resolve();
+    }, 5000);
+  })
+}
+const toppingsAdded = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("toppings added");
+      resolve();
+    }, 12000);
+  })
+}
+const secondLayerOfCheeseAdded = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("second layer of cheese added");
+      resolve();
+    }, 5000);
+  })
+}
+const pizzaBaked = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("pizza baked!");
+      resolve();
+    }, 15000);
+  })
+}
+const oreganoAddedAndPacked = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("oregano added and packed");
+      resolve();
+    }, 8000);
+  })
+}
+const packageReceivedAtCounter = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("pizza received at counter");
+      resolve();
+    }, 2000);
+  })
+}
+
+const executeOrder = async () => {
+  try {
+    console.log('Order placed');
+    await chefReceivedTheOrderAndStartedPreparing();
+    await pizzaSauceAdded();
+    await firstLayerOfCheeseAdded();
+    await toppingsAdded;
+    await secondLayerOfCheeseAdded();
+    await pizzaBaked();
+    await oreganoAddedAndPacked();
+    await packageReceivedAtCounter();
+    console.log('The order is ready and handed over to the zomato delivery guy!');
+  }
+  catch (err) {
+    console.log(err);
+  };
+}

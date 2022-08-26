@@ -46,6 +46,9 @@ console.log(marks);
 marks.splice(2, 4);
 // starts at 2nd index, and removes 4 elements
 
+marks.slice(2, 4);
+// [53, 53]
+
 console.log(marks);
 
 marks.reverse();
@@ -659,3 +662,114 @@ console.log(studentsDetails);
 	- batch
 	- average marks secured
 */
+
+
+// EXERCISE 4
+let students1 = [
+  {
+    name: 'Vaishnavi',
+    batch: 9,
+    marks: {
+      science: 80,
+      social: 70,
+      hindi: 80,
+      maths: 100,
+      english: 90,
+    }
+  }, {
+    name: 'Abhishek',
+    batch: 10,
+    marks: {
+      science: 75,
+      social: 75,
+      hindi: 62,
+      maths: 81,
+      english: 52,
+    }
+  }, {
+    name: 'Pappu',
+    batch: 10,
+    marks: {
+      science: 70,
+      social: 72,
+      hindi: 75,
+      maths: 95,
+      english: 82,
+    }
+  }, {
+    name: 'Ram',
+    batch: 9,
+    marks: {
+      science: 35,
+      social: 24,
+      hindi: 22,
+      maths: 95,
+      english: 67,
+    }
+  }, {
+    name: 'Shyam',
+    batch: 8,
+    marks: {
+      science: 80,
+      social: 70,
+      hindi: 80,
+      maths: 100,
+      english: 90,
+    }
+  }, {
+    name: 'Lakshman',
+    batch: 8,
+    marks: {
+      science: 45,
+      social: 87,
+      hindi: 65,
+      maths: 78,
+      english: 99,
+    }
+  }
+]
+
+/* Q - Return array of students with following details:
+  - name
+  - batch
+  - average marks secured
+
+Sort the array based on average marks (Topper first)
+if equal, then on basis of batch number (Lowest first)
+*/
+
+let studentsDetails1 = students1.map(student => {
+  let marksArray = Object.values(student.marks);
+  let totalMarks = 0;
+  marksArray.forEach(marks => {
+      totalMarks += marks;
+  })
+  let averageMarks = totalMarks / marksArray.length;
+
+  return {
+      name : student.name,
+      batch : student.batch,
+      averageMarks
+  }
+})
+
+// sorting
+// sorting using comparator -> remember if returning negative value then will sort in ascending order
+studentsDetails1.sort((element1, element2) => element2.averageMarks - element1.averageMarks);
+
+console.log(studentsDetails1);
+/*
+(6) [{…}, {…}, {…}, {…}, {…}, {…}]
+  0: {name: 'Vaishnavi', batch: 9, averageMarks: 84}
+  1: {name: 'Shyam', batch: 8, averageMarks: 84}
+  2: {name: 'Pappu', batch: 10, averageMarks: 78.8}
+  3: {name: 'Lakshman', batch: 8, averageMarks: 74.8}
+  4: {name: 'Abhishek', batch: 10, averageMarks: 69}
+  5: {name: 'Ram', batch: 9, averageMarks: 48.6}
+  length: 6
+  [[Prototype]]: Array(0)
+*/
+
+// now if avg marks are same then have to sort based on batch number
+// for this create a new array and iterate over studentsDetails1 and compare average marks, if same then compare batch and push the one which has higher batch number.
+// or can swap entries inside student details without creating a new array

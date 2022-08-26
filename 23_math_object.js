@@ -35,6 +35,8 @@ z = Math.sqrt(4.3);
 console.log(z);
 // 2.073644135332772
 
+// cbrt -> cube root
+
 z = Math.pow(2, 3); 
 // 2 to the power 3
 console.log(z);
