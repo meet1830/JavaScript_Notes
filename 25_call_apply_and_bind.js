@@ -22,6 +22,29 @@ Demerits of arrow functions
     -> dont use arrow function if using 'this'. it is not recognized in an arrow function
     -> arrow functions are not hoisted
 */
+/*
+hoisting in js
+
+variable can be declared after it has been used in js
+{
+    x = 5;
+    {
+        x processed and used
+    }
+    var x;
+}
+
+// this cannot be done with let and const
+
+// only declarations are stored in js and not initializations
+{
+    var x;
+    console.log(x); // undefined
+    x = 5;
+}
+
+hoisting can result in bugs, hence always declare variables at top 
+*/
 
 pavanDetails.displayFullName()
 

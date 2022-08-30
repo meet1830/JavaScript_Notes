@@ -10,15 +10,16 @@ let html = '<h1> This is heading </h1>' + '<p> This is para </p>' + name;
 html = html.concat(' this', ' ', 'str200');
 
 console.log(html);
+// '<h1> This is heading </h1><p> This is para </p>meet this str200'
 
 console.log(html.length);
+// 63
 
 console.log(html.toLowerCase());
 
 console.log(html.toUpperCase());
 
 console.log(html); 
-
 //tolowercase and touppercase does not change the string
 
 console.log(html[1]); 
@@ -59,6 +60,14 @@ console.log(html.slice(0,-4));
 console.log(html.slice(0,4));
 // <h1>
 
+console.log(html.substring(0,-10));
+// empty output
+
+console.log(html.substring(10, 4));
+// gets reversed to html.substring(4, 10);
+// _This_
+
+
 console.log(html.substring(0,4));
 // <h1>
 //returns same output
@@ -83,7 +92,7 @@ document.body.innerHTML = myHtml;
 
 const animals = ['ant', 'bison', 'camel', 'duck', 'elephant', 'fsf', 'ssfhr', 'hh53y', 'eg4y4'];
 
-console.log(animals.slice(2, 1)); 
+console.log(animals.slice(4, 3)); 
 //empty array
 
 console.log(animals.slice(2, -1)); 

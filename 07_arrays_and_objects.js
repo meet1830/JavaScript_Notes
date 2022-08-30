@@ -202,19 +202,19 @@ arr.map(function(element) {
 data = [943, 5243, 529, 52, 492, 52925, 52, 529];
 
 let updatedArr = data.map(function (element) {
-  // return element + 5;
+  return element + 5;
+  // (8) [948, 5248, 534, 57, 497, 52930, 57, 534]
 
   // return element; --> will return the same element values
 
   // return; --> will return an array of undefined same size as input arr, for each iteration we dont return anything hence undefined array
   // or leave the loop empty with no code inside and print will result in same output as above
 
-  if (element % 2 === 0) return element;
+  // if (element % 2 === 0) return element;
   // output undefined where not return and ans where possible
 });
 
 console.log(updatedArr);
-// (8) [948, 5248, 534, 57, 497, 52930, 57, 534]
 
 // es6 syntax includes method in array and string
 console.log(data.includes(5243));
