@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 id="heading">JavaScript course</h1>
+        <div class="child" id="first">Child 1</div>
+        <div class="child" id="second">Child 2</div>
+        <div class="child" id="third">Child 3</div>
+        <div class="child" id="fourth">Child 4</div>
+
+        <form action="#" method="post">
+            <a href="www.google.com">Go to Google</a>
+            Search this website: <input type="text" name="hello">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+<script src="12_understanding_dom.js"></script>
+
+<!-- if trying to manipulate the document directly, using dom methods, etc then always remember to place the script tag below the body and not in the head tag. if any function is running and it is changing some value then it is okay to put it in the head tag but for direct manipulation always put script tag at the end -->
+
+</html>
